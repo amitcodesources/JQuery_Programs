@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Object</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(event){
+			$('#btn').click(function(event){
+				getEventDetails(event);
+			}).mouseover(function(event){
+				getEventDetails(event);
+			}).mouseleave(function(event){
+				getEventDetails(event);
+			});
+
+			function getEventDetails(event){
+				//var e = $.event.fix(event);	For earlier ver of IE pass e.type and so on
+				var eventDetails = 'Event = ' + event.type + "<br/>" +
+								'X = ' + event.pageX + "<br/>" +
+								'Y = ' + event.pageY + "<br/>" +
+								'Target Element = ' + event.target.type + "<br/>" +
+								'Target Element Tag Name = ' + event.target,tagName;
+				$('#divResult').html(eventDetails);
+			}
+		});
+	</script>
+</head>
+<body>
+	<input type="button" id="btn" value="Click Me">
+	<br><br>
+	<div id="divResult"></div>
+</body>
+</html>

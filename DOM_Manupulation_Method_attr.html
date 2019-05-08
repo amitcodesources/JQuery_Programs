@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attr Method</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// $('div').attr('title', 'My DIV TITLE');
+			$('div').each(function(i){
+				$(this).attr('title', 'My DIV '+ (i+1) + ' TITLE');
+			})
+			$('div').each(function(){
+				alert($(this).attr('title'));
+			})
+		})
+	</script>
+</head>
+<body>
+		<div id="div1" title="My DIV1">
+			DIV 1
+		</div>
+		<div id="div2" title="My DIV2">
+			DIV 2
+		</div>
+</body>
+</html>

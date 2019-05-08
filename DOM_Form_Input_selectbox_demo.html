@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selector Demo</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#selectCountries').change(function(){
+				var selectedcoutries = $('#selectCountries option:selected');
+				$('#divcountries').html("Value= "+selectedcoutries.val()+" ,Text= "+ selectedcoutries.text());
+			});
+
+
+			$('#selectCities').change(function(){
+				var selectedcities = $('#selectCities option:selected');
+				if(selectedcities.length > 0){
+					var resultcities = "";
+					selectedcities.each(function(){
+						resultcities += "Value= "+$(this).val()+" ,Text= "+$(this).text()+"<br/>";
+					})
+				}
+				$('#divcities').html(resultcities);
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<b>Country:</b>
+	<select id="selectCountries">
+		<option value="USA">United States</option>
+		<option value="IND">India</option>
+		<option value="CHN">China</option>
+		<option value="JPN">Japan</option>
+		<option value="ENG">Enland</option>
+	</select>
+	<br/><br/>
+	<div id="divcountries"></div>
+	<br/><br/><br/><br/>
+	<select id="selectCities" multiple="true">
+		<option value="HYD">Hyderabad</option>
+		<option value="CHN">Chennai</option>
+		<option value="MOB">Mumbai</option>
+		<option value="DEL">Delhi</option>
+		<option value="BLR">Banglore</option>
+	</select>
+	<br/><br/>
+	<div id="divcities"></div>
+</body>
+</html>

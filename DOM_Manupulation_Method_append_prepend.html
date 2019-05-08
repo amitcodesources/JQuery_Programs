@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Append Prepend Methods</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			//$('div').append('<b> Tutorial</b>');
+
+			//$('<b> Tutorial</b>').appendTo($('div'));
+
+			//$('div').prepend('<b>Tutorial </b>');
+
+			$('<b>Tutorial </b>').prependTo($('div'));
+
+		});
+	</script>
+</head>
+<body>
+		<div id="div1">
+			JavaScript
+		</div>
+		<br/>
+		<div id="div2">
+			JQuery
+		</div>
+		<br/>
+		<div id="div3">
+			Angular JS
+		</div>
+</body>
+</html>

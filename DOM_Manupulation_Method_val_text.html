@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Val Text Methods</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#selectCountries').change(function(){
+				var result = '';
+				$('#selectCountries option:selected').each(function(){
+				result += "Value = "+ $(this).val()+"<br/>";
+				result += "Text = "+$(this).text();
+				});
+				$('#resultSpan').html(result);
+			});
+		});
+	</script>
+</head>
+<body>
+	Countries:
+	<select id="selectCountries">
+		<option value="USA">United States</option>
+		<option value="IND">India</option>
+		<option value="CHN">China</option>
+		<option value="JPN">Japan</option>
+		<option value="ENG">Enland</option>
+	</select>
+	<br/><br/>
+	<span id="resultSpan"></span>
+</body>
+</html>

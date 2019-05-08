@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CheckBox Demo</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#btn').click(function(){
+				var result = $('input[type="checkbox"]:checked');
+				if(result.length>0){
+					var resultString = result.length+ " checkboxe(s) checked.<br/>";
+					result.each(function(){
+						resultString += $(this).val() + "<br/>";
+					});
+					$('#res').html(resultString);
+				}
+				else{
+					$('#res').html("No checkbox(s) is checked");	
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	Skills:
+	<input type="checkbox" name="skills" checked="checked" value="Java">Java
+	<input type="checkbox" name="skills" value="JavaScript">JavaScript
+	<input type="checkbox" name="skills" value="JQuery">JQuery
+	<br/><br/>
+	<input type="submit" id="btn" value="Submit">
+	<br/><br/>
+	<div id="res"></div>
+</body>
+</html>

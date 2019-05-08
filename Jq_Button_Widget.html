@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Button Widget</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <link href="Themes/jquery-ui.css" rel="stylesheet" />
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input[type="button"], input[type="submit"], a').button({
+			    icons: {
+			        primary: 'ui-icon-circle-triangle-w',
+			        secondary: 'ui-icon-circle-triangle-e'
+			    }
+			});
+			$('input[type="checkbox"]').button().click(function () {
+			    var isChecked = $(this).is(':checked') ? 'Checked' : 'Unchecked'
+			    alert($(this).attr('id') + ' Checkbox ' + isChecked)
+			});
+ 			
+ 		// 	$('input[type="radio"]').button().click(function () {
+			//     alert($(this).attr('id') + ' radio button selected')
+			// });
+
+			$('#radioButtons').buttonset();
+			$('#radioButtons input[type="radio"]').click(function () {
+			    alert($(this).attr('id') + ' radio button selected')
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="Button Element" />
+	<input type="submit" value="Submit Button" />
+	<a href="#">Anchor Element</a>
+	<br><br>
+	<input type="checkbox" id="Bold" /><label for="Bold">B</label>
+	<input type="checkbox" id="Underline" /><label for="Underline">U</label>
+	<input type="checkbox" id="Italic" /><label for="Italic">I</label>
+	<br><br>
+	<!-- <input type="radio" id="Male" name="Gender" /><label for="Male">Male</label>
+	<input type="radio" id="Female" name="Gender" /><label for="Female">Female</label> -->
+	<br><br>
+	<div id="radioButtons">
+    <input type="radio" id="Male" name="Gender" /><label for="Male">Male</label>
+    <input type="radio" id="Female" name="Gender" /><label for="Female">Female</label>
+	</div>
+</body>
+</html>	

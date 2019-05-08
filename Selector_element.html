@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Element Selector</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('th').css('color', 'silver');
+			$('th').css('background-color', 'green');
+			$('td').css('color', 'white');
+
+			$('tr:odd').css('background-color', 'maroon');
+			$('tr:even').css('background-color', 'gray');
+
+			$('div').css('color', 'green');
+			$('#div2 span').css('color', 'red');
+		})
+	</script>
+</head>
+<body>
+		<table border="1" align="center">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Course</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Amit</td>
+				<td>amit@hotmail.com</td>
+				<td>MEAN Stack</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Ajit</td>
+				<td>ajit@hotmail.com</td>
+				<td>Java</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Asit</td>
+				<td>asit@hotmail.com</td>
+				<td>PHP</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Arpit</td>
+				<td>arpit@hotmail.com</td>
+				<td>.NET</td>
+			</tr>
+			<tr>
+				<td>105</td>
+				<td>Arjit</td>
+				<td>arjit@hotmail.com</td>
+				<td>Python</td>
+			</tr>
+		</table>
+		<div id="div1">
+			<span>Welcome To jQuery</span>
+		</div>
+		<div id="div2">
+			<span>Welcome To JS</span>
+		</div>
+</body>
+</html>

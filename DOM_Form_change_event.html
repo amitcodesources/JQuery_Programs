@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Change Method</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var result = '';
+			$('.inputRequired').change(function(){
+				if(result == '')
+				{
+					result = $(this).val(); 
+				}
+				else
+				{
+					result += " , " + $(this).val();
+				}
+				$('#divResult').html(result);
+			});
+		});
+	</script>
+</head>
+<body>
+	First Name : <input type="text" class="inputRequired">
+	<br/><br/>
+	Last Name : <input type="text" class="inputRequired">
+	<br/><br/>
+	Gender:
+	<input type="radio" name="gender" value="Male" class="inputRequired">Male
+	<input type="radio" name="gender" value="Female" class="inputRequired">Female
+	<br/><br/>
+	Skils:
+	<input type="checkbox" name="skils" value="Java" class="inputRequired">Java
+	<input type="checkbox" name="skils" checked="checked" value="JavaScript" class="inputRequired">JavaScript
+	<input type="checkbox" name="skils" value="JQuery" class="inputRequired">JQuery
+	<br/><br/>
+	Country:
+	<select id="ddlCountry" class="inputRequired">
+		<option selected="true" value="USA">USA</option>
+		<option value="India">India</option>
+		<option value="China">China</option>
+	</select>
+	<br/><br/>
+	<textarea class="inputRequired"></textarea>
+	<br/><br/>
+	<input type="submit" value="Submit">
+	<br/><br/>
+	<div id="divResult"></div>
+</body>
+</html>

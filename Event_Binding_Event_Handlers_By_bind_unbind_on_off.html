@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Binding Event Handlers</title>
+	<style type="text/css">
+		.ButtonStyle{
+			background-color: red;
+			cursor: pointer;
+			font-weight: bold;
+			color: white;
+		}
+	</style>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+            $('#btnClickMe').bind('click mouseover mouseout', function(event){
+            	if(event.type = 'click'){
+            		$('#divResult').html('Button Clicked At'
+            			+ 'X = ' + event.pageX + 'Y = ' + event.pageY);
+            	}
+            	else if(event.type = 'mouseover'){
+            		$(this).addClass('ButtonStyle');	
+            	}
+            	 else {
+                    $(this).removeClass('ButtonStyle');
+                }
+            });
+
+            // $('#btnClickMe').on({
+            // 	click : function(event){
+            // 		$('#divResult').html('Button Clicked At X = ' + event.pageX + 'Y = ' + event.pageY);
+            // 	}
+            // 	mouseover : function(){
+            // 		$(this).addClass('ButtonStyle');	
+            // 	}
+            // 	mouseout : function() {
+            //         $(this).removeClass('ButtonStyle');
+            //     }
+            // });
+
+            $('#btnEnableMouseOverEffect').click(function () {
+                $('#btnClickMe').bind('mouseover', function () {
+                    $(this).addClass('ButtonStyle');
+                });
+            });
+
+            $('#btnDisableMouseOverEffect').click(function () {
+                $('#btnClickMe').removeClass('ButtonStyle');
+                $('#btnClickMe').unbind('mouseover');
+            });
+        });
+	</script>
+</head>
+<body>
+	  <input type="button" id="btnClickMe" value="Click Me">
+	  <input type="button" id="btnEnableMouseOverEffect" value="Enable Mouse Over Effect">
+	  <input type="button" id="btnDisableMouseOverEffect" value="Disable Mouse Over Effect">
+	  <br/><br/>
+	  <div id="divResult"></div>
+</body>
+</html>

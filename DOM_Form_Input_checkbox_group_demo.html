@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CheckBox Group Demo</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// $('#btnSkills').click(function(){
+			// 		getChecked('skills');
+			// });
+
+			// $('#btnCities').click(function(){
+			// 		getChecked('cities');
+			// });
+
+			$('input[name="skills"]').click(function(){
+					getChecked('skills');
+			});
+
+			$('input[name="cities"]').click(function(){
+					getChecked('cities');
+			});
+
+			var getChecked = function(groupName){
+				var result = $('input[name="'+groupName+'"]:checked');
+				if(result.length>0){
+					var resultString = result.length+ " checkboxe(s) checked.<br/>";
+					result.each(function(){
+						resultString += $(this).val() + "<br/>";
+					});
+					$('#div'+groupName).html(resultString);
+				}
+				else{
+					$('#div'+groupName).html("No checkbox(s) is checked");	
+				}
+			};
+		});
+	</script>
+</head>
+<body>
+	<b>Skills:</b>
+	<input type="checkbox" name="skills" value="Java">Java
+	<input type="checkbox" name="skills" value="JavaScript">JavaScript
+	<input type="checkbox" name="skills" value="JQuery">JQuery
+	<br/><br/>
+	<b>Cities:</b>
+	<input type="checkbox" name="cities" value="Hyderabad">Hyderabad
+	<input type="checkbox" name="cities" value="Chennai">Chennai
+	<input type="checkbox" name="cities" value="Banglore">Banglore
+	<br/><br/>
+	<input type="submit" id="btnSkills" value="Get Skils">
+	<input type="submit" id="btnCities" value="Get Cities">
+	<br/><br/>
+	<b>Selected Skills:</b><br/>
+	<div id="divskills"></div>
+	<br/>
+	<b>Selected Cities:</b><br/>
+	<div id="divcities"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Input Demo</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// $('input').each(function(){
+			// 	alert($(this).val());
+			// })
+
+			// $(':input').each(function(){
+			// 	alert($(this).val());
+			// })
+
+			$('input[type="text"]').each(function(){
+				alert($(this).val());
+			})
+
+		})
+	</script>
+</head>
+<body>
+	First Name : <input type="text" value="John">
+	<br/><br/>
+	Last Name : <input type="text" value="Major">
+	<br/><br/>
+	Gender:
+	<input type="radio" name="gender" checked="checked" value="Male">Male
+	<input type="radio" name="gender" value="Female">Female
+	<br/><br/>
+	Skils:
+	<input type="checkbox" name="skils" checked="checked" value="Java">Java
+	<input type="checkbox" name="skils" checked="checked" value="JavaScript">JavaScript
+	<input type="checkbox" name="skils" value="JQuery">JQuery
+	<br/><br/>
+	Country:
+	<select>
+		<option selected="true" value="USA">USA</option>
+		<option value="India">India</option>
+		<option value="China">China</option>
+	</select>
+	<br/><br/>
+	<textarea>I am a Senior Stack Developer with 10 yrs of experience</textarea>
+	<br/><br/>
+	<input type="submit" value="Submit">
+</body>
+</html>

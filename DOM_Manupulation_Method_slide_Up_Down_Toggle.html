@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Methods Demo</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){			
+			
+			$('li').css('color', 'blue').slideUp(2000).slideDown(2000);
+
+			$('#btn1').click(function(){
+				$('li').css('color', 'blue').slideToggle(2000);
+			});
+
+		});
+	</script>
+</head>
+<body>
+		<input type="button" id="btn1" value="Slide Toggle">
+		<br><br>
+		<ul>
+			<li>USA</li>
+			<li>UK</li>
+			<li>INDIA</li>
+			<li>CHINA</li>
+			<li>JAPAN</li>
+			<li>KOREA</li>
+		</ul>
+</body>
+</html>

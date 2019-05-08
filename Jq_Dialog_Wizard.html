@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Dialog Widget</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <link href="Themes/jquery-ui.css" rel="stylesheet" />
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//$('#dialog').dialog(); 
+
+			$('#btn').click(function(){
+				$('#dialog').dialog("open");
+			});
+
+			$('#dialog').dialog({
+				title : "Title from title option",
+				draggable: false,		//bydefault it is true
+				resizable: false,		//bydefault it is true
+				closeOnEscape: false,	//bydefault it is true
+				modal: true,			//bydefault it is false
+				autoOpen: false			//bydefault it is true
+			}); 
+		});
+	</script>
+</head>
+<body>
+	Enter Name: <input type="text">
+	<br><br>
+	<input type="button" id="btn" value="Show Dialog">
+	<div id="dialog" title="Title From Div Element">
+	This is jQuery dialog widget example
+	</div>
+</body>
+</html>

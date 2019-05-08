@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Execute Event Once</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			// $('#btn').on('click', function () {
+   			//  alert('Button Clicked');
+   			//  $(this).off('click');
+  		    //  });
+
+    		// $('#btn').one('click', function () {
+      		//     alert('Button Clicked');
+    		// });
+
+    		// $('#btn').on({
+		    //     mouseover: function () {
+		    //         $(this).css('background-color', 'yellow');
+		    //         $(this).off('mouseover');
+		    //     },
+		    //     mouseout: function () {
+		    //         $(this).css('background-color', 'white');
+		    //         $(this).off('mouseout');
+		    //     },
+		    //     click: function () {
+		    //         alert('Button clicked');
+		    //         $(this).off('click');
+		    //     }
+    		// });
+
+    		$('#btn').one({
+		        mouseover: function () {
+		            $(this).css('background-color', 'yellow');
+		        },
+		        mouseout: function () {
+		            $(this).css('background-color', 'white');
+		        },
+		        click: function () {
+		            alert('Button clicked');
+		        }
+    		});
+		});
+	</script>
+</head>
+<body>
+		<input type="button" id="btn" value="Click Me" />
+</body>
+</html>

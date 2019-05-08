@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Slider Single Demo</title>
+	<link href="Themes/jquery-ui.css" rel="stylesheet" />
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script src="Scripts/jquery-ui-1.12.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			    var divElement = $('#myDiv');
+			    $('#slider').slider({
+			        min: 20,
+			        max: 120,
+			        orientation: 'horizontal',
+			        slide: function (event, ui) {
+			            divElement.css('font-size', ui.value + 'px');
+			            divElement.css('color', 'blue');
+			            $('#divSlide').html('Slide = ' + ui.value);
+			        },
+			        start: function (event, ui) {
+            			$('#divStart').html('Start = ' + ui.value);
+        			},
+        			stop: function (event, ui) {
+            			$('#divStop').html('Stop = ' + ui.value);
+        			}
+				 });
+		});
+	</script>
+</head>
+<body>
+		<div id="slider"></div>
+		<br />
+		<div id="myDiv" style="font-size: 20px">
+		    Slider Example
+		</div>
+		<br /><br />
+		<div id="divStart"></div>
+		<div id="divStop"></div>
+		<div id="divSlide"></div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animate Queue</title>
+	<style>
+        .myDivClass {
+            width: 150px;
+            padding: 5px;
+            font-size: 18px;
+            border: 1px solid black;
+            opacity: .4;
+            background-color: red;
+            color: white;
+        }
+    </style>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+			$(document).ready(function () {
+
+				//With Sequence 
+            $('#myButton1').click(function () { 
+            	jQuery.fx.off = $('#chkBox').is(':checked');             
+	                $('#myDiv1')
+	                    .animate({ 'width': 500 }, 1500)
+	                    .animate({ 'padding': 20 }, 1500)
+	                    .animate({ 'font-size': 50 }, 1500)
+	                    .animate({ 'border-width': 10 }, 1500)
+	                    .animate({ 'opacity': 1 }, 1500);
+
+	                
+	                $('#myDiv2')
+	                    .animate({ 'width': 500 }, 1500)
+	                    .animate({ 'padding': 20 }, 1500)
+	                    .animate({ 'font-size': 50 }, 1500)
+	                    .animate({ 'border-width': 10 }, 1500)
+	                    .animate({ 'opacity': 1 }, 1500);
+            });
+
+            		//Without Sequence 
+             $('#myButton2').click(function () {
+             	jQuery.fx.off = $('#chkBox').is(':checked');
+                $('#myDiv1')
+                    .animate({ 'width': 500 }, { duration: 1500, queue: false })
+    				.animate({ 'padding': 20 }, { duration: 1500, queue: false })
+    				.animate({ 'font-size': 50 }, { duration: 1500, queue: false })
+    				.animate({ 'border-width': 10 }, { duration: 1500, queue: false })
+    				.animate({ 'opacity': 1 }, { duration: 1500, queue: false });
+
+                $('#myDiv2')
+                    .animate({ 'width': 500 }, { duration: 1500, queue: false })
+    				.animate({ 'padding': 20 }, { duration: 1500, queue: false })
+    				.animate({ 'font-size': 50 }, { duration: 1500, queue: false })
+				    .animate({ 'border-width': 10 }, { duration: 1500, queue: false })
+    				.animate({ 'opacity': 1 }, { duration: 1500, queue: false });
+            });
+
+            	$('#myDiv3')
+					    .animate({ 'width': 500 }, 1500)
+					    .queue(function () {
+					        console.log('Queued calls = ' +
+					            $(this).queue('fx').length); $(this).dequeue();
+					    })
+					    .animate({ 'padding': 20 }, 1500)
+					    .animate({ 'font-size': 50 }, 1500)
+					    .animate({ 'border-width': 10 }, 1500)
+					    .animate({ 'opacity': 1 }, 1500)
+					    .queue(function () {
+					        console.log('Queued calls = ' +
+					            $(this).queue('fx').length); $(this).dequeue();
+    			});
+        });
+	</script>
+</head>
+<body>
+	<input type="button" id="myButton1" value="Start Animation With Sequence" />
+	<input type="button" id="myButton2" value="Start Animation Without Sequence" />
+    <input id="chkBox" type="checkbox" /> Turn off animations
+    <br><br>
+    <div id="myDiv1" class="myDivClass">
+        jQuery animations
+    </div>
+    <br />
+    <div id="myDiv2" class="myDivClass">
+        Pragim Tech
+    </div>
+    <br />
+    <div id="myDiv3" class="myDivClass">
+        Aoutomatic Div
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class Selector</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//$('.small').css('border', '2px solid red');
+			//$('.big').css('border', '2px solid green');
+			$('.small, span.big').css('border', '2px solid red');
+			
+		});
+	</script>
+</head>
+<body>
+	<span class="small">
+		Span 1
+	</span>
+	<br/><br/>
+	<div class="small">
+		Div 1
+	</div>
+	<br/>
+	<span class="big">
+		Span 2
+	</span>
+	<p class="big">This is a Paragraph</p>
+</body>
+</html>

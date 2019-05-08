@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JQuery DatepPicker Demo</title>
+    <script src="Scripts/jquery-1.12.4.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <link href="Themes/jquery-ui.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#txtDate').datepicker({
+                appendText: 'dd/mm/yyyy',
+                showOn: 'both',
+                buttonText: 'Calender',
+                dateFormat: 'dd/mm/yy',
+                numberOfMonths: 1,
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date(2008, 0, 5),
+                maxDate: new Date(2018, 0, 5)
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+    <div>
+        <input type="text" ID="txtDate">
+    </div>
+    </form>
+</body>
+</html>

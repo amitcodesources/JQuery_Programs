@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Resizable Widget</title>
+	<style type="text/css">
+		divClass {
+            font-family: Arial;
+            height: 150px;
+            width: 150px;
+            text-align: center;
+            color: white;
+        }
+	</style>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <link href="Themes/jquery-ui.css" rel="stylesheet" />
+	<script type="text/javascript">
+		$(document).ready(function(){
+				$('#redDiv').resizable({
+                     alsoResize: '#blueDiv'
+                }); 
+                $('#greenDiv').resizable({
+                    containment: '#container'
+                }); 
+		});
+	</script>
+</head>
+<body>
+		  <div id="redDiv" class="divClass" style="background-color: red">
+            Red Div
+          </div>
+          <br />
+          <div id="blueDiv" class="divClass" style="background-color: blue">
+            Blue Div
+          </div>
+          <br><br>
+          <div id="container" style="border: 3px solid black;
+                            height: 300px; width: 300px; padding: 5px">
+                <div id="greenDiv" class="divClass" style="background-color: green">
+                    Green Div
+                </div>
+            </div>
+</body>
+</html>

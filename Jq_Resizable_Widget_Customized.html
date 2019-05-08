@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customized Resizable Widget</title>
+	<style type="text/css">
+		divClass {
+            font-family: Arial;
+            height: 150px;
+            width: 150px;
+            text-align: center;
+            color: white;
+        }
+	</style>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <link href="Themes/jquery-ui.css" rel="stylesheet" />
+	<script type="text/javascript">
+		$(document).ready(function(){
+				$('#redDiv').resizable({
+                start: function (event, ui) {
+                    $('#startDimensions').html(getDimensions(event, ui));
+                },
+                stop: function (event, ui) {
+                    $('#stopDimensions').html(getDimensions(event, ui));
+                },
+                resize: function (event, ui) {
+                    $('#resizingDimensions').html(getDimensions(event, ui));
+                }
+            });
+
+            function getDimensions(event, ui) {
+                var html = 'Height = ' + ui.size.height + '<br/>';
+                html += 'Width = ' + ui.size.width;
+                return html;
+            }
+		});
+	</script>
+</head>
+<body>
+		   <form id="form1" runat="server">
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <td>Dimensions at Start</td>
+                <td>
+                    <div id="startDimensions"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Dimensions while Resizing</td>
+                <td>
+                    <div id="resizingDimensions"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Dimensions at Stop</td>
+                <td>
+                    <div id="stopDimensions"></div>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <div id="redDiv" class="divClass" style="background-color: red">
+            Red Div
+        </div>
+    </form>
+</body>
+</html>

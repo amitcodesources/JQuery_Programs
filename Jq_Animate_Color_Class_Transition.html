@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jquery Animate Color Class Transition</title>
+    <style>
+        .redDiv {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            border: 5px solid black;
+            padding: 5px;
+            width: 500px;
+        }
+    </style>
+    <script src="Scripts/jquery-1.12.4.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+                   var applyClass = true;
+                    $('#btnAnimate').click(function () {
+                        if (applyClass) {
+                            $('#myDiv').addClass('redDiv', 2000);
+                        }
+                        else {
+                            $('#myDiv').removeClass('redDiv', 2000);
+                        }
+                        applyClass = !applyClass;
+                    });
+        });
+    </script>
+</head>
+<body>
+      <form id="form1" runat="server">
+        <div id="myDiv" style="width: 500px; border: 1px solid black;
+                               padding: 5px; font-size: 15px">
+            At Pragim Technologies, training is delivered by real time software experts
+            having more than 10 years of experience. Interview questions and real time
+            scenarios discussion on topics covered for the day. Realtime projects
+            discussion relating to the possible interview questions. Trainees can attend
+            training and use lab untill you get a job. Resume preperation and mock up
+            interviews. 100% placement assistance. 24 hours lab facility.
+        </div>
+        <br />
+        <input type="button" id="btnAnimate" value="Animate" />
+    </form>  
+</body>
+</html>

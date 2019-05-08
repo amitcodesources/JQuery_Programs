@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Menu Widget</title>
+	<style>
+    .ui-menu {
+        width: 150px;
+    }
+	</style>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <link href="Themes/jquery-ui.css" rel="stylesheet" />
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#menu').menu({
+    			icons: { submenu: 'ui-icon-circle-arrow-e' },
+    			select: function (event, ui) {
+        			alert(ui.item.text());
+    			}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div style="width: 150px">
+    	<ul id="menu">
+		    <li>USA
+		        <ul>
+		            <li>Virginia</li>
+		            <li>Maryland</li>
+		        </ul>
+		    </li>
+		    <li>India
+		        <ul>
+		            <li>AP</li>
+		            <li class="ui-state-disabled">MP</li>
+		            <li>Karnataka
+		            <ul>
+		                <li>Bangalore</li>
+		                <li>Mangalore</li>
+		                <li>Mysore</li>
+		            </ul>
+		            </li>
+		        </ul>
+		    </li>
+		    <li>UK</li>
+		    <li>Australia</li>
+		</ul>
+	</div>
+</body>
+</html>

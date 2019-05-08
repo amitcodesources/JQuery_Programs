@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Array To String Demo</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		// var empJSON = [{"firstname":"Amit", "lastname":"Kumar", "gender":"Male", "salary":100000 },
+		// 				{"firstname":"Neha", "lastname":"Kumari", "gender":"Female", "salary":50000}];
+
+		// var jsonString = JSON.stringify(empJSON);
+		// $('#divResult').html(jsonString).css('color', 'blue');
+
+		var jsonString = '[{"firstname":"Amit","lastname":"Kumar","gender":"Male","salary":100000},{"firstname":"Neha","lastname":"Kumari","gender":"Female","salary":50000}]';
+
+		var empJSON = JSON.parse(jsonString);
+
+		var result = "";
+		$.each(empJSON, function(i, item){
+		result += "First Name = "+ item.firstname +"<br/>";
+		result += "Last Name = "+ item.lastname +"<br/>";
+		result += "Gender = "+ item.gender +"<br/>";
+		result += "Salary = "+ item.salary +"<br/><br/>";
+		});
+		$('#divResult').html(result).css('color', 'blue');
+
+		
+	});
+	</script>
+</head>
+<body>
+		<div id="divResult"></div>
+</body>
+</html>

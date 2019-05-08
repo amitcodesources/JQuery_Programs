@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CheckBox Group Value Text Demo</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input[name="skills"]').click(function(){
+					getChecked('skills');
+			});
+
+			$('input[name="cities"]').click(function(){
+					getChecked('cities');
+			});
+
+			var getChecked = function(groupName){
+				var result = $('input[name="'+groupName+'"]:checked');
+				if(result.length>0){
+					var resultString = result.length+ " checkboxe(s) checked.<br/>";
+					result.each(function(){
+						var resultval = $(this).val();
+						resultString += resultval + " - " + $('label[for="cb-'+resultval+'"]').text() +"<br/>";
+					});
+					$('#div'+groupName).html(resultString);
+				}
+				else{
+					$('#div'+groupName).html("No checkbox(s) is checked");	
+				}
+			};
+		});
+	</script>
+</head>
+<body>
+	<b>Skills:</b>
+	<input type="checkbox" name="skills" value="jv">
+	<label for="cb-jv">Java</label>
+	<input type="checkbox" name="skills" value="js">
+	<label for="cb-js">JavaScript</label>
+	<input type="checkbox" name="skills" value="jq">
+	<label for="cb-jq">JQuery</label>
+	<br/><br/>
+	<b>Cities:</b>
+	<input type="checkbox" name="cities" value="hd">
+	<label for="cb-hd">Hyderabad</label>
+	<input type="checkbox" name="cities" value="cn">
+	<label for="cb-cn">Chennai</label>
+	<input type="checkbox" name="cities" value="bn">
+	<label for="cb-bn">Banglore</label>
+	<br/><br/>
+	<b>Selected Skills:</b><br/>
+	<div id="divskills"></div>
+	<br/>
+	<b>Selected Cities:</b><br/>
+	<div id="divcities"></div>
+</body>
+</html>

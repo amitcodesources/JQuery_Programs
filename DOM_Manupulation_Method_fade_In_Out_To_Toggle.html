@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fade Methods Demo</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){			
+			
+			//$('li').css('color', 'blue').fadeOut(2000).fadeIn(2000);
+
+			$('#btn1').click(function(){
+				$('li').css('color', 'blue').fadeToggle(2000);
+			});
+
+			$('#btn2').click(function(){
+				$('li').css('color', 'blue').fadeTo(1000, 0.4);
+			});
+
+		});
+	</script>
+</head>
+<body>
+		<input type="button" id="btn1" value="Fade Toggle">
+		<input type="button" id="btn2" value="Fade To">
+		<br><br>
+		<ul>
+			<li>USA</li>
+			<li>UK</li>
+			<li>INDIA</li>
+			<li>CHINA</li>
+			<li>JAPAN</li>
+			<li>KOREA</li>
+		</ul>
+</body>
+</html>

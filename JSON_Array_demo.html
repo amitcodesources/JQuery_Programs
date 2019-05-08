@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Array Demo</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		var json_emp1 = [{
+			"firstname":"Amit",
+			"lastname":"Kumar",
+			"gender":"Male",
+			"email":"amit@hotmail.com",
+			"salary":100000
+		},
+		{
+			"firstname":"Neha",
+			"lastname":"Kumari",
+			"gender":"Female",
+			"email":"neha@hotmail.com",
+			"salary":50000
+		}];
+		var result1 = "";
+		result1 += "First Name = "+ json_emp1[0].firstname +"<br/>";
+		result1 += "Last Name = "+ json_emp1[0].lastname +"<br/>";
+		result1 += "Gender = "+ json_emp1[0].gender +"<br/>";
+		result1 += "Email = "+ json_emp1[0].email +"<br/>";
+		result1 += "Salary = "+ json_emp1[0].salary +"<br/>";
+		result1 += "<br/><br/>";
+		result1 += "First Name = "+ json_emp1[1].firstname +"<br/>";
+		result1 += "Last Name = "+ json_emp1[1].lastname +"<br/>";
+		result1 += "Gender = "+ json_emp1[1].gender +"<br/>";
+		result1 += "Email = "+ json_emp1[1].email +"<br/>";
+		result1 += "Salary = "+ json_emp1[1].salary +"<br/>";
+
+		$('#divResult1').html(result1).css('color', 'blue');
+
+		////////////////////////////////////////////////////////////////////
+
+
+			var json_emp2 = {
+				"Amit":{
+			"firstname":"Amit",
+			"lastname":"Kumar",
+			"gender":"Male",
+			"email":"amit@hotmail.com",
+			"salary":100000
+		},
+		"Neha": {
+			"firstname":"Neha",
+			"lastname":"Kumari",
+			"gender":"Female",
+			"email":"neha@hotmail.com",
+			"salary":50000
+		}};
+		var result2 = "";
+		result2 += "First Name = "+ json_emp2.Amit.firstname +"<br/>";
+		result2 += "Last Name = "+ json_emp2.Amit.lastname +"<br/>";
+		result2 += "Gender = "+ json_emp2.Amit.gender +"<br/>";
+		result2 += "Email = "+ json_emp2.Amit.email +"<br/>";
+		result2 += "Salary = "+ json_emp2.Amit.salary +"<br/>";
+		result2 += "<br/><br/>";
+		result2 += "First Name = "+ json_emp2.Neha.firstname +"<br/>";
+		result2 += "Last Name = "+ json_emp2.Neha.lastname +"<br/>";
+		result2 += "Gender = "+ json_emp2.Neha.gender +"<br/>";
+		result2 += "Email = "+ json_emp2.Neha.email +"<br/>";
+		result2 += "Salary = "+ json_emp2.Neha.salary +"<br/>";
+		
+		$('#divResult2').html(result2).css('color', 'red');
+	});
+	</script>
+</head>
+<body>
+		<div id="divResult1"></div>
+		<br><br>
+		<div id="divResult2"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map Method</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			var result1 = [];
+			$('li').each(function(index, element){
+				result1.push($(element).text());
+			});
+			$('#divResult1').html(result1+"  ");
+
+			$('#divResult2').html($('li').map(function(i, e){
+				return $(e).text();
+			}).get()+"	");
+
+
+			var result3 = '';
+			$('li').each(function(ind, elmnt){
+				result3 += $(elmnt).text() + " | ";
+			});
+			result3 = result3.substr(0, result3.length-1);
+			$('#divResult3').html(result3);
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li>US</li>
+		<li>UK</li>
+		<li>INDIA</li>
+		<li>CHINA</li>
+		<li>JAPAN</li>
+		<li>KOREA</li>
+	</ul>
+	<br/>
+	<div id="divResult1"></div>
+	<br/>
+	<div id="divResult2"></div>
+	<br/>
+	<div id="divResult3"></div>
+</body>
+</html>

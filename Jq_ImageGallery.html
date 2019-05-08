@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Image Gallery</title>
+	<style type="text/css">
+        .imgStyle {
+            width: 100px;
+            height: 100px;
+            border: 3px solid grey;
+        }
+    </style>
+    <script src="Scripts/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#divId img').on({
+                mouseover: function () {
+                    $(this).css({
+                        'cursor': 'hand',
+                        'border-Color': 'red'
+                    });
+                },
+                mouseout: function () {
+                    $(this).css({
+                        'cursor': 'default',
+                        'border-Color': 'grey'
+                    });
+                },
+                click: function () {
+                    var imageURL = $(this).attr('src');
+                    $('#mainImage').fadeOut(1000, function () {
+                        $(this).attr('src', imageURL);
+                    }).fadeIn(1000);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+		<img id="mainImage" style="border:3px solid grey"
+         src="Images/Cars/1.jpg" height="500" width="540" />
+    <br />
+    <div id="divId">
+        <img class="imgStyle" src="Images/Cars/1.jpg" />
+        <img class="imgStyle" src="Images/Cars/2.jpg" />
+        <img class="imgStyle" src="Images/Cars/3.jpg" />
+        <img class="imgStyle" src="Images/Cars/4.jpg" />
+        <img class="imgStyle" src="Images/Cars/5.jpg" />
+    </div>
+</body>
+</html>

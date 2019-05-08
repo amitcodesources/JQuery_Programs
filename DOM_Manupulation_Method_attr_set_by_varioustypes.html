@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attr Set By Various Types</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			//Type 1
+			// var config={
+			// 	'title':'New DIV Title',
+			// 	'style':'border:2px solid green',
+			// 	'name':'My DIV'
+			// };
+			// $('div').attr(config);
+
+			//Type 2
+
+			// $('div').attr({
+			// 	'title':'New DIV Title',
+			// 	'style':'border:2px dashed green',
+			// 	'name':'My DIV'
+			// });
+
+			//Type 3
+			$('div').attr('title', 'New DIV Title').attr('style', 'border:2px dotted green');
+
+			var result = '';
+			$('div').each(function(){
+				result += 'ID = '+$(this).attr('id')+"<br/>";
+				result += 'Title = '+$(this).attr('title')+"<br/>";
+				result += 'Style = '+$(this).attr('style')+"<br/>";
+				result += 'Name = '+$(this).attr('name')+"<br/><br/>";
+			});
+			$('#resultSpan').html(result);
+		})
+	</script>
+</head>
+<body>
+		<div id="div1" title="My DIV1" name="DIV1">
+			DIV 1
+		</div>
+		<br/>
+		<div id="div2" title="My DIV2" name="DIV2">
+			DIV 2
+		</div>
+		<br/><br/>
+		<span id="resultSpan"></span>
+</body>
+</html>

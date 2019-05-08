@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Demo</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		var json_emp = {
+			"firstname":"Amit",
+			"lastname":"Kumar",
+			"gender":"Male",
+			"email":"amit@hotmail.com",
+			"salary":10000
+		};
+		var result = "";
+		result += "First Name = "+ json_emp.firstname +"<br/>";
+		result += "Last Name = "+ json_emp.lastname +"<br/>";
+		result += "Gender = "+ json_emp.gender +"<br/>";
+		result += "Email = "+ json_emp.email +"<br/>";
+		result += "Salary = "+ json_emp.salary +"<br/>";
+
+		$('#divResult').html(result);
+	});
+	</script>
+</head>
+<body>
+		<div id="divResult"></div>
+</body>
+</html>

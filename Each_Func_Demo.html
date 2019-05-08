@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Each Function Demo</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			// $('li').each(function(){
+			// 	// if($(this).text() == 'INDIA'){
+			// 	// 	return false;
+			// 	// }
+			// 	$(this).css('color', 'blue');
+			// 	alert($(this).text());
+			// });
+
+
+			// $('li').each(function(index){
+			// 	alert(index + " : " + $(this).text());
+			// });
+
+			$('li').css('color', 'blue');
+			$('#divResult').css('color', 'red');
+			$('li').each(function(){
+				$('#divResult').html($('#divResult').html()+ "<br/>" +$(this).text());
+			});
+			
+
+		});
+	</script>
+</head>
+<body>
+		<ul>
+			<li>USA</li>
+			<li>UK</li>
+			<li>INDIA</li>
+			<li>CHINA</li>
+			<li>JAPAN</li>
+			<li>KOREA</li>
+		</ul>
+		<div id="divResult"></div>
+</body>
+</html>

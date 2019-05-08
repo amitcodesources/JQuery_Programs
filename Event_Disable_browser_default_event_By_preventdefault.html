@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Disable Events PreventDefault</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            $(this).on('contextmenu', function (e) {
+                e.preventDefault();
+                $('#divResult1').append('Right click disabled<br/>')
+            });
+
+            $('#myHyperLink').on('click', function (e) {
+                e.preventDefault();
+                $('#divResult2').append('Hyperlink default action prevented<br/>')
+            });
+
+        });
+    </script>
+</head>
+<body>
+		<h3>
+        Right click disabled on this page. Try
+        to right click and see what happens
+    	</h3>
+    	<br /><br />
+    	<div id="divResult1"></div>
+    	<a id="myHyperLink" href="http://pragimtech.com">
+        Clicking on the link will not take you to PragimTech
+	    </a>
+	    <br /><br />
+	    <div id="divResult2"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Passing Data To Event Handler</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+            $('#btnClickMe').on('click', {
+                firstName: 'John',
+                lastName: 'Doe'
+            }, sayHello);
+
+            $('#btnClickMe').on('click', {
+                firstName: 'Mary'
+            }, sayHello);
+
+            $('#btnClickMe').on('click', sayHello);
+
+            function sayHello(event) {
+                if (event.data == null) {
+                	alert('No name provided');
+                	//$('#divResult').html('No name provided');
+                }
+                else {
+                   alert('Hello ' + event.data.firstName +
+                        (event.data.lastName != null ? ' ' + event.data.lastName : ''));
+                   // $('#divResult').html('Hello ' + event.data.firstName +
+                   //      (event.data.lastName != null ? ' ' + event.data.lastName : ''));
+                }
+            }
+            });
+     </script>
+</head>
+<body>
+	<input id="btnClickMe" type="button" value="Click Me"/>
+	<br/><br/>
+	<div id="divResult"></div>
+</body>
+</html>

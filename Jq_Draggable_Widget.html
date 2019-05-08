@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Draggable Widget</title>
+	<style type="text/css">
+		.divClass {
+			    height: 200px;
+			    width: 200px;
+			    background-color: red;
+			    color: white;
+			    display: table-cell;
+			    vertical-align: middle;
+			    text-align: center;
+			}
+	</style>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <link href="Themes/jquery-ui.css" rel="stylesheet" />
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#draggableDiv1').draggable();
+
+			$('#draggableDiv2').draggable({
+		    containment : 'parent',
+		    cursor: 'move',
+		    opacity : 0.3,
+		    revert: true,
+    		revertDuration : 1000
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<div id="draggableDiv1" class="divClass">
+    Drag me around
+	</div>
+	<br><br>
+	<div id="containerDiv" style="height: 400px; width: 500px; border: 3px solid black">
+	    <div id="draggableDiv2" class="divClass">
+	        Drag me around
+	    </div>
+	</div>
+</body>
+</html>

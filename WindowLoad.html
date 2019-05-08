@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Window Load</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#div1').html("Height = " + $('#img1').height() + "<br/>" + "Width = " + $('#img1').width());
+		});
+		// $(window).load(function(){
+		// 	$('#div1').html("Height = " + $('#img1').height() + "<br/>" + "Width = " + $('#img1').width());
+		// });
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+	<img id="img1" src="Images/laptop.jpg"/>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Slider Multiple Demo</title>
+	<link href="Themes/jquery-ui.css" rel="stylesheet" />
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script src="Scripts/jquery-ui-1.12.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			    $('#sliderHeight, #sliderWidth').slider({
+        		min: 100, max: 500, slide: refreshImage
+    			});
+
+			    $('#divOpacity').slider({
+			        min: 0, max: 100, value: 100,
+			        slide: refreshImage
+			    });
+
+			    function refreshImage() {
+			        var height = $('#sliderHeight').slider('value');
+			        var width = $('#sliderWidth').slider('value');
+			        var opacity = $('#divOpacity').slider('value')
+			        $('#myImg').css({
+			            height: height, width: width, opacity: opacity / 100
+			        });
+			        $('#divDimensions').html('Height : ' + height + ' Pixels<br/>' +
+			                                    'Width : ' + width + ' Pixels<br/>' +
+			                                    'Opacity : ' + opacity / 100);
+			    }
+		});
+	</script>
+</head>
+<body>
+		<div id="sliderHeight"></div>
+		<br />
+		<div id="sliderWidth"></div>
+		<br />
+		<div id="divOpacity"></div>
+		<br />
+		<div id="divDimensions"></div>
+		<br />
+		<img id="myImg" src="Images/laptop.jpg" style="width: 100px; height: 100px" />
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Method Channing Demo</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// $('li').css('color', 'blue');
+			// $('li').slideUp(1000);
+			// $('li').slideDown(1000);
+			// $('li').attr('title', 'Countries');
+
+			// $('li')
+			// 	.css('color', 'blue')
+			// 	.slideUp(1000)
+			// 	.slideDown(1000);
+
+			// $('li')
+			// 	.css('color', 'blue')
+			// 	.fadeOut(2000)
+			// 	.fadeIn(2000);
+
+			$('li').fadeTo(2000);
+			
+
+			//$('li').css('color', 'blue').fadeOut(2000).fadeIn(2000);
+			$('#btn1').click(function(){
+				$('li').css('color', 'blue').fadeToggle(2000);
+			});
+			//$('li').css('color', 'blue').slideUp(2000).slideDown(2000);
+			$('#btn2').click(function(){
+				$('li').css('color', 'blue').slideToggle(2000);
+			});
+		});
+	</script>
+</head>
+<body>
+		<input type="button" id="btn1" value="Fade Me">
+		<input type="button" id="btn2" value="Slide Me">
+		<br><br>
+		<ul>
+			<li>USA</li>
+			<li>UK</li>
+			<li>INDIA</li>
+			<li>CHINA</li>
+			<li>JAPAN</li>
+			<li>KOREA</li>
+		</ul>
+</body>
+</html>

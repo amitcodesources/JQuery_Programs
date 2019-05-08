@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Tooltip Demo</title>
+	<link href="Themes/jquery-ui.css" rel="stylesheet" />
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script src="Scripts/jquery-ui-1.12.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+				//$('#txtName').tooltip(); 
+
+				// $('#txtName').tooltip({
+    // 				content : '<u>content option</u> tooltip overriding title attribute tooltip'
+				// }); 
+
+
+				$('#txtName').tooltip({
+			        content: toolTipFunction,
+			        track: true,
+			        show : {delay:10, duration:500, effect: 'slideDown'},
+    				hide: { delay: 10, duration: 500, effect: 'slideUp' }
+			    });
+
+			    function toolTipFunction() {
+			        return 'Tooltip from a function';
+			    }
+		});
+	</script>
+</head>
+<body>
+		<label id="lblName" for="txtName" title="Full Name">Name</label>
+		<input id="txtName" type="text" title="Your full name as it appears in paasport" />
+</body>
+</html>

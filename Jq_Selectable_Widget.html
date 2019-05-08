@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Selectable Widget</title>
+	<style type="text/css">
+		      li{
+            display:inline-block;
+            padding:20px;
+            border:1px solid black;
+            cursor:pointer
+        }
+        .ui-selected{
+            background-color:green;
+            color:white
+        }
+        .ui-selecting{
+            background-color:grey;
+            color:white
+        }
+	</style>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <link href="Themes/jquery-ui.css" rel="stylesheet" />
+	<script type="text/javascript">
+		$(document).ready(function(){
+				  $('#selectable').selectable({
+                stop: function () {
+                    var result = '';
+                    $('.ui-selected').each(function () {
+                        result += $(this).text() + '<br/>';
+                    });
+
+                    $('#result').html(result);
+                }
+            });
+		});
+	</script>
+</head>
+<body>
+		      <form id="form1" runat="server">
+              <ul id="selectable">
+                  <li>Mon</li>
+                  <li>Tue</li>
+                  <li>Wed</li>
+                  <li>Thu</li>
+                  <li>Fri</li>
+                  <li>Sat</li>
+                  <li>Sun</li>
+              </ul>
+              You selected : <div id="result"></div>
+          </form>
+</body>
+</html>

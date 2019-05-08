@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Draggable Widget</title>
+	<style type="text/css">
+		.divClass {
+			    font-family: Arial;
+			    height: 200px;
+			    width: 200px;
+			    color: white;
+			    display: table-cell;
+			    vertical-align: middle;
+			    text-align: center;
+			    z-index: 0;
+			}
+	</style>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <link href="Themes/jquery-ui.css" rel="stylesheet" />
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.divClass').draggable();
+
+			// $('.divClass').draggable({
+			//         stack: '.divClass'
+			// });
+			$('.divClass').mousedown(function () {
+			        var maxZindex = 0;
+			        $(this).siblings('.divClass').each(function () {
+			            var currentZindex = Number($(this).css('z-index'));
+			            maxZindex = currentZindex > maxZindex ? currentZindex : maxZindex;
+			        });
+			        $(this).css('z-index', maxZindex + 1);
+			    });
+		});
+	</script>
+</head>
+<body>
+	<div id="redDiv" class="divClass" style="background-color: red">
+    Red Div
+	</div>
+
+	<div id="greeDiv" class="divClass" style="background-color: green">
+	    Green Div
+	</div>
+
+	<div id="blueDiv" class="divClass" style="background-color: blue">
+	    Blue Div
+	</div>
+
+	<div id="brownDiv" class="divClass" style="background-color: brown">
+	    Brown Div
+	</div>
+</body>
+</html>

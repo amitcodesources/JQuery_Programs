@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diff Btwn .each n $.each</title>
+	<script src="Scripts/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+
+			result1 = '';
+			$('li').each(function(index, element){
+				result1 += "Index = "+ index + ", Value = "+ $(element).text() + "<br/>";
+			});
+			$('#divResult1').html(result1);
+
+			var intArray = [100, 200, 300, 400, 500];
+			result2 = '';
+			$.each(intArray, function(i, e){
+				result2 += "Index = "+ i + ", Value = "+ e + "<br/>";
+			});
+			$('#divResult2').html(result2);
+
+			var jsObject = {
+				'USA':'Washington',
+				'INDIA':'New Delhi',
+				'UK':'London',
+				'CHINA':'Sanghai',
+				'JAPAN':'Tokyo'
+			};
+			result3 = '';
+			$.each(jsObject, function(key, elmnt){
+				result3 += "Key = "+ key + ", Value = "+ elmnt + "<br/>";
+			});
+			$('#divResult3').html(result3);			
+
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li>US</li>
+		<li>UK</li>
+		<li>INDIA</li>
+		<li>CHINA</li>
+		<li>JAPAN</li>
+		<li>KOREA</li>
+	</ul>
+	<div id="divResult1"></div>
+	<br>
+	<div id="divResult2"></div>
+	<br>
+	<div id="divResult3"></div>
+</body>
+</html>
